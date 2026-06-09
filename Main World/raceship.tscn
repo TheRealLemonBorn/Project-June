@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cqopsjlhm65lg"]
+
+[ext_resource type="SpriteFrames" uid="uid://nronv17afri0" path="res://Sprites/Debug Spritesheet/DebugSpriteframeAnim.res" id="1_tgeun"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0kic"]
+
+[node name="Raceship" type="CharacterBody3D" unique_id=1711538750]
+motion_mode = 1
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1539635012]
+sprite_frames = ExtResource("1_tgeun")
+animation = &"Air_downwards"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=897200044]
+shape = SubResource("CapsuleShape3D_q0kic")

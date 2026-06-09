@@ -1,5 +1,7 @@
-extends StaticBody3D
+extends Area3D
 
-func Interactable(interactionType: int) -> void:
-	print("Do Interaction type: ", interactionType)
-	pass
+
+func _on_test_player_player_present(player: CharacterBody3D) -> void:
+	#Do the interaction thing.
+	print("Yo whaddup")
+	

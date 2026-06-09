@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://lfos0o8y3r6t"]
+
+[ext_resource type="SpriteFrames" uid="uid://nronv17afri0" path="res://Sprites/Debug Spritesheet/DebugSpriteframeAnim.res" id="1_pbfp8"]
+[ext_resource type="Script" uid="uid://sjauq734cf6j" path="res://Main World/character_body_3d.gd" id="1_ym2gs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ym2gs"]
+
+[node name="DebugPlayer" type="CharacterBody3D" unique_id=239140195]
+script = ExtResource("1_ym2gs")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1252250941]
+pixel_size = 0.03
+texture_filter = 0
+sprite_frames = ExtResource("1_pbfp8")
+animation = &"Air_downwards"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1882450437]
+shape = SubResource("CapsuleShape3D_ym2gs")

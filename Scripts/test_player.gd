@@ -1,9 +1,10 @@
 extends CharacterBody3D
 
-
+var main = preload("res://Main World/racetracks.tscn")
 var SPEED
 const JUMP_VELOCITY = 5.0
-
+var canInteract = false
+signal playerPresent(player: CharacterBody3D)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -134,16 +135,13 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	
-	if event.is_action("Interact"):
-		var interactSphere = ShapeCast3D.new()
-		var shape = SphereShape3D.new()
-		shape.set("radius", 10.0)
-		interactSphere.set("Shape3D", shape)
-		
-		if interactSphere.is_colliding():
-			for n in range(interactSphere.get_collision_count(), 0, -1):
-				if interactSphere.get_collider(n).has_method("Interactable"):
-					interactSphere.get_collider(n).Interactable(0)
-			
-		
-	pass
+	if event.is_action("Interact") && canInteract:
+		playerPresent.emit(self)
+
+func _on_interactable_test_object_body_entered(body: Node3D) -> void:
+	canInteract = true
+
+
+func _on_interactable_test_object_body_exited(body: Node3D) -> void:
+	canInteract = false
+	pass # Replace with function body.

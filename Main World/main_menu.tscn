@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b4dywgc6ullmu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_45yar"]
+size = Vector2(120, 120)
+
+[sub_resource type="Curve" id="Curve_45yar"]
+_data = [Vector2(0.12459016, 0.14709407), 0.0, 0.0, 0, 0, Vector2(0.4639344, 0.7040144), 0.0, 0.0, 0, 0, Vector2(0.79508185, 0.509287), 0.0, 0.0, 0, 0, Vector2(0.89672124, 0.594967), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_nsd41"]
+curve_x = SubResource("Curve_45yar")
+curve_y = SubResource("Curve_45yar")
+curve_z = SubResource("Curve_45yar")
+
+[sub_resource type="Gradient" id="Gradient_45yar"]
+offsets = PackedFloat32Array(0.0017123288, 1)
+colors = PackedColorArray(0.8901961, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nsd41"]
+gradient = SubResource("Gradient_45yar")
+
+[node name="Main Menu" type="Control" unique_id=1187683012]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=701077696]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="HFlowContainer" unique_id=1214698607]
+layout_mode = 2
+texture_normal = SubResource("PlaceholderTexture2D_45yar")
+texture_pressed = SubResource("CurveXYZTexture_nsd41")
+texture_hover = SubResource("GradientTexture2D_nsd41")
+
+[node name="TextureButton2" type="TextureButton" parent="HFlowContainer" unique_id=410577048]
+layout_mode = 2
+texture_normal = SubResource("PlaceholderTexture2D_45yar")
+
+[node name="TextureButton3" type="TextureButton" parent="HFlowContainer" unique_id=1561220633]
+layout_mode = 2
+texture_normal = SubResource("PlaceholderTexture2D_45yar")

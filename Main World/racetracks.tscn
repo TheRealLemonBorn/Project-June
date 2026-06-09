@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c3w53ciohqtrw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ain2c"]
+
+[node name="Racetracks" type="Node3D" unique_id=1131927932]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=742040163]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -50)
+mesh = SubResource("SphereMesh_ain2c")

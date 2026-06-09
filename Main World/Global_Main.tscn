@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bptwm1m7qe6bq"]
+
+[ext_resource type="PackedScene" uid="uid://dhjndop38wemu" path="res://Main World/Main3D.tscn" id="1_5x2ml"]
+
+[node name="Main Scene" type="Node3D" unique_id=798560748]
+
+[node name="Debug Test Map" parent="." unique_id=396175641 instance=ExtResource("1_5x2ml")]
