@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Girls in Space Mecha"
-run/main_scene="uid://b4dywgc6ullmu"
+run/main_scene="uid://bqph0ob557ngs"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Persistent="Things that persist no matter what."
 
 [input]
 

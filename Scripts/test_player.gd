@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-var main = preload("res://Main World/racetracks.tscn")
 var SPEED
 const JUMP_VELOCITY = 5.0
 var canInteract = false
@@ -133,15 +132,12 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func _input(event: InputEvent) -> void:
-	
-	if event.is_action("Interact") && canInteract:
-		playerPresent.emit(self)
 
-func _on_interactable_test_object_body_entered(body: Node3D) -> void:
-	canInteract = true
-
-
-func _on_interactable_test_object_body_exited(body: Node3D) -> void:
-	canInteract = false
-	pass # Replace with function body.
+func save():
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x, # Vector2 is not supported by JSON
+		"pos_y" : position.y,
+	}
+	return save_dict

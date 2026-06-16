@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://b7aiu2h6psmx7"]
+
+[ext_resource type="Texture2D" uid="uid://bth2fiai42gla" path="res://Sprites/UI Icons/UI.png" id="1_128am"]
+[ext_resource type="Script" uid="uid://xtfcbkadpixa" path="res://Scripts/main_menu.gd" id="1_qmt3e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmt3e"]
+atlas = ExtResource("1_128am")
+region = Rect2(103.77728, 545.4056, 494.2658, 256.87653)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qlnt"]
+atlas = ExtResource("1_128am")
+region = Rect2(922.2372, 554.2615, 669.6504, 237.38928)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hds8c"]
+atlas = ExtResource("1_128am")
+region = Rect2(-11.372894, 876.6885, 795.4313, 232.07458)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fngyk"]
+atlas = ExtResource("1_128am")
+region = Rect2(1016.1303, 860.7459, 446.43365, 276.3637)
+
+[node name="MainMenu" type="Control" unique_id=1165700269]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qmt3e")
+
+[node name="Menu Buttons" type="VBoxContainer" parent="." unique_id=887480999]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 300.0
+offset_right = 1225.0
+offset_bottom = 1313.0
+scale = Vector2(0.325, 0.325)
+
+[node name="TextureButton" type="TextureButton" parent="Menu Buttons" unique_id=1102498129]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_qmt3e")
+stretch_mode = 3
+
+[node name="TextureButton2" type="TextureButton" parent="Menu Buttons" unique_id=111613597]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_3qlnt")
+stretch_mode = 3
+
+[node name="TextureButton3" type="TextureButton" parent="Menu Buttons" unique_id=1708281994]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_hds8c")
+stretch_mode = 3
+
+[node name="TextureButton4" type="TextureButton" parent="Menu Buttons" unique_id=2076239158]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_fngyk")
+stretch_mode = 3
+
+[node name="Title" type="Sprite2D" parent="." unique_id=303820442]
+scale = Vector2(0.7200001, 0.7200001)
+texture = ExtResource("1_128am")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1600, 454.48718)
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=940557124]
+visible = false
+layout_mode = 0
+offset_left = 40.0
+offset_top = 17.0
+offset_right = 1109.0
+offset_bottom = 591.0
+mouse_filter = 2
+tab_alignment = 1
+current_tab = 0
+clip_tabs = false
+switch_on_drag_hover = false
+tab_focus_mode = 0
+tab_0/title = "General"
+tab_1/title = "Game"
+tab_2/title = "Video"
+tab_3/title = "Audio"
+
+[node name="General Settings" type="ItemList" parent="TabContainer" unique_id=2141443573]
+layout_mode = 2
+select_mode = 2
+allow_reselect = true
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+item_count = 2
+item_0/text = "Setting One"
+item_1/text = "Setting two"
+metadata/_tab_index = 0
+metadata/_tab_name = "General"
+
+[node name="Game Settings" type="ItemList" parent="TabContainer" unique_id=1445719697]
+visible = false
+layout_mode = 2
+select_mode = 2
+allow_reselect = true
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+item_count = 2
+item_0/text = "Setting 1"
+item_1/text = "Setting two"
+metadata/_tab_index = 1
+metadata/_tab_name = "Game"
+
+[node name="Video Settings" type="ItemList" parent="TabContainer" unique_id=1681943098]
+visible = false
+layout_mode = 2
+select_mode = 2
+allow_reselect = true
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+item_count = 2
+item_0/text = "Setting 1"
+item_1/text = "Setting two"
+metadata/_tab_index = 2
+metadata/_tab_name = "Video"
+
+[node name="Audio Settings" type="ItemList" parent="TabContainer" unique_id=558942755]
+visible = false
+layout_mode = 2
+select_mode = 2
+allow_reselect = true
+allow_search = false
+auto_width = true
+auto_height = true
+text_overrun_behavior = 0
+item_count = 2
+item_0/text = "Setting 1"
+item_1/text = "Setting two"
+metadata/_tab_index = 3
+metadata/_tab_name = "Audio"
+
+[connection signal="pressed" from="Menu Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Menu Buttons/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Menu Buttons/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="Menu Buttons/TextureButton4" to="." method="_on_texture_button_4_pressed"]

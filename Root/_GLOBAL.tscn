@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bqph0ob557ngs"]
+
+[ext_resource type="Script" uid="uid://dtw31bft0s4wn" path="res://Root/_global.gd" id="1_rdtxv"]
+[ext_resource type="PackedScene" uid="uid://b7aiu2h6psmx7" path="res://Root/Scenes/UI/MAIN_MENU.tscn" id="2_j27rl"]
+
+[node name="Global" type="Node" unique_id=145254966 groups=["Persistent"]]
+script = ExtResource("1_rdtxv")
+
+[node name="MainMenu" parent="." unique_id=1165700269 instance=ExtResource("2_j27rl")]
+
+[connection signal="CONTINUE" from="MainMenu" to="." method="_on_main_menu_continue"]
+[connection signal="START_FRESH" from="MainMenu" to="." method="_on_main_menu_start_fresh"]

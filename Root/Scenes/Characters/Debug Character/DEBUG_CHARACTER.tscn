@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cl6mtlpdtjtnl"]
+
+[ext_resource type="Script" uid="uid://dohpfaywgcu3v" path="res://Scripts/test_player.gd" id="1_8ej51"]
+[ext_resource type="SpriteFrames" uid="uid://nronv17afri0" path="res://Sprites/Debug Spritesheet/DebugSpriteframeAnim.res" id="1_kwc3l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ej51"]
+
+[node name="Debug Character" type="CharacterBody3D" unique_id=1827275043]
+script = ExtResource("1_8ej51")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1938551265]
+shape = SubResource("CapsuleShape3D_8ej51")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=567514782]
+pixel_size = 0.03
+texture_filter = 0
+sprite_frames = ExtResource("1_kwc3l")
+animation = &"down"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=444365450]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 3, 8)
+fov = 45.0
