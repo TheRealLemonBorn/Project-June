@@ -3,7 +3,13 @@ extends CharacterBody3D
 var SPEED
 const JUMP_VELOCITY = 5.0
 var canInteract = false
+
 signal playerPresent(player: CharacterBody3D)
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action("Interact"):
+		playerPresent.emit(self)
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -132,12 +138,8 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-
-func save():
-	var save_dict = {
-		"filename" : get_scene_file_path(),
-		"parent" : get_parent().get_path(),
-		"pos_x" : position.x, # Vector2 is not supported by JSON
-		"pos_y" : position.y,
-	}
-	return save_dict
+func _disable_LocalCam():
+	$Camera3D.current = false
+	
+func _enable_LocalCam():
+	$Camera3D.current = true

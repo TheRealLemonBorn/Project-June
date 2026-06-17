@@ -15,9 +15,18 @@ run/main_scene="uid://bqph0ob557ngs"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://Root/Scenes/": "yellow",
+"res://Root/Scenes/Characters/": "red",
+"res://Scripts/": "blue"
+}
+
 [global_group]
 
 Persistent="Things that persist no matter what."
+Interactables="Interactable Characters"
 
 [input]
 

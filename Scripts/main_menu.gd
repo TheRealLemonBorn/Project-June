@@ -7,6 +7,7 @@ signal CONTINUE()
 #Start Button
 func _on_texture_button_pressed() -> void:
 	START_FRESH.emit()
+	self.queue_free()
 
 
 
@@ -19,6 +20,7 @@ func _on_texture_button_2_pressed() -> void:
 #Continue Button
 func _on_texture_button_3_pressed() -> void:
 	CONTINUE.emit()
+	self.queue_free()
 
 #Quit Button
 func _on_texture_button_4_pressed() -> void:

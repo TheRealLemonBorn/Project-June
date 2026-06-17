@@ -2,6 +2,8 @@ extends Node
 
 var showUI
 var SkipTutorial = false
+static var PLAYER
+signal PlayerChange()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_main_menu_start_fresh() -> void:
 	clear_game()
-	TutorialStart(SkipTutorial)
+	load_start(SkipTutorial)
 	pass # Replace with function body.
 
 func _notification(what):
@@ -99,17 +101,21 @@ func load_game():
 func clear_game():
 	FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	
-func TutorialStart(skip:bool):
-	if skip:
-		return	
-	else:
-		load_start(!skip)
-		
 
 func load_start(TF:bool):
-	
-	pass
+	var childLoad = load("res://Root/Scenes/Light of Dawn/LIGHT_OF_DAWN.tscn")
+	var childInstance = childLoad.instantiate()
+	add_child(childInstance)
 
+func load_continue():
+	pass
 
 func _on_main_menu_continue() -> void:
 	pass # Replace with function body.
+
+func set_PLAYER(playerNode:Node):
+	PLAYER = playerNode
+	PlayerChange.emit()
+
+func get_PLAYER():
+	return PLAYER

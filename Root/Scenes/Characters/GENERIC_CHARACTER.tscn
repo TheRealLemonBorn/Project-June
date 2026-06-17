@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c7njt37cdtm53"]
+
+[ext_resource type="Script" uid="uid://civs7qexuggv7" path="res://Scripts/generic_character.gd" id="1_osxmk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3qrtf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3qrtf"]
+load_path = "res://.godot/imported/DebugTestingCharacter-SpriteSheet.png-ba471329ed11ae1b73845cf1c0f0705f.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osxmk"]
+atlas = SubResource("CompressedTexture2D_3qrtf")
+region = Rect2(0, 2, 64, 198)
+
+[node name="GenericCharacter" type="StaticBody3D" unique_id=1019147783]
+script = ExtResource("1_osxmk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1481389975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_3qrtf")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1195539187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+pixel_size = 0.03
+billboard = 2
+double_sided = false
+texture_filter = 0
+render_priority = 10
+texture = SubResource("AtlasTexture_osxmk")
+hframes = 3
+vframes = 3
